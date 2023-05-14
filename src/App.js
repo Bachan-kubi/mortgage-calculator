@@ -1,23 +1,24 @@
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import Navbar from "./components/parts/Navbar";
 import Results from "./components/parts/Results";
 import Tenure from "./components/parts/Tenure";
 import SliderSelect from "./components/parts/SliderSelect";
 
-
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <Grid container spacing={5}>
-        <Grid item>
-          <SliderSelect />
-          <Tenure />
+      <Container maxWidth='lg'>
+        <Navbar />
+        <Grid container spacing={5}>
+          <Grid item md={6}>
+            <SliderSelect />
+            <Tenure />
+          </Grid>
+          <Grid item md={6}>
+            <Results />
+          </Grid>
         </Grid>
-        <Grid item>
-          <Results />
-        </Grid>
-      </Grid>
+      </Container>
     </div>
   );
 }
